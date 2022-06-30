@@ -174,7 +174,15 @@ for _,pair in pairs(fLib) do
     
 end
 
-
+if not _G.ClickDetector then
+	local genericStatus,genericError = pcall(function()
+		for _,v in pairs(game.Workspace.Parts.Models:GetDescendants()) do
+			if v.Name == "Kitchen" and v:IsA("ProximityPrompt") and v.Parent.Parent:FindFirstChildOfClass("Model") and #v.Parent.Parent.Model:GetChildren() == 3 then
+				_G.ClickDetector = v
+			end
+		end
+	end)
+end
 
 local TaskLibrary = {task.wait,task.delay}
 local _wait = TaskLibrary[1]
@@ -262,28 +270,16 @@ function main()
 		end
 	end
 
-
-	local genericStatus,genericError = pcall(function()
-	    for _,v in pairs(game.Workspace.Parts.Models:GetDescendants()) do
-            if v.Name == "Kitchen" and v:IsA("ProximityPrompt") and v.Parent.Parent:FindFirstChildOfClass("Model") and #v.Parent.Parent.Model:GetChildren() == 3 then
-                --[[v.Enabled = true
-                v.RequiresLineOfSight = false
-                v.MaxActivationDistance = 99999--]]
-                for i = 1,Generator do
-                    fireproximityprompt(v)
-
-                end
-                foundCD = true
-            end
-        end
-	end)
-	foundCD = true
-
-
+	foundCD = _G.ClickDetector and true
+	
 	if not foundCD then
 		Message("Error","Attempt to index nil with gCo.")
 	end
 	assert(foundCD == true, "Attempt to index nil with gCo")
+	
+	for i = 1,Generator do
+            fireproximityprompt(_G.ClickDetector)
+	end
 
 	function Spawn_Sign()
 		local elapsedTime,maxTimeout = 0,15
