@@ -1,4 +1,4 @@
-local ScreenSize = 1
+local ScreenSize = .8
 
 --Parallel enabled. [+50% chance to crash Roblox]
 local Sync = task.synchronize
@@ -356,6 +356,7 @@ if not _G.GlobalContextMenu then
 	local buttons,Connections = {},{}
 	local MainConnection,ToggleConnection,IB,IC,UIC
 
+    GUI.Frame:FindFirstChildOfClass("UIScale").Scale = ScreenSize
 
 	function dragify(Frame)
 		dragToggle = nil
