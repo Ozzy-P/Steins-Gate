@@ -1,4 +1,4 @@
-local ScreenSize = .8
+local ScreenSize = .75
 
 --Parallel enabled. [+50% chance to crash Roblox]
 local Sync = task.synchronize
