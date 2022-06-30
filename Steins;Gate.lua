@@ -113,7 +113,54 @@ SG.Color = ColorSequence.new({
 	ColorSequenceKeypoint.new(0.75,Color3.fromRGB(255, 140, 140)),
 	ColorSequenceKeypoint.new(1,Color3.fromRGB(255, 140, 140)),
 })
-    local c=Instance.new('ScreenGui',service.CoreGui);c.Name=''local d=Instance.new('Frame',c)d.Name=''d.Size=UDim2.new(0,400,0,350)d.Position=UDim2.new(.5,-200,.5,-175)d.BackgroundColor3=Color3.new(0,0,0)d.BackgroundTransparency=.2;d.BorderSizePixel=0;local e=Instance.new('TextLabel',d)e.Text="FA System - "..a;SG.Parent=e;e.Name=''e.TextScaled=true;e.Font=19;e.TextColor3=Color3.new(255,255,255)e.BackgroundTransparency=1;e.Size=UDim2.new(0,300,0,50)e.Position=UDim2.new(.5,-150,.1,-25)local f=Instance.new('TextLabel',d)f.Text=""f.Name=''f.Font=19;f.TextColor3=Color3.new(255,255,255)f.BackgroundTransparency=0;f.BorderColor3=Color3.new(255,255,255)f.Size=UDim2.new(0,300,0,0)f.Position=UDim2.new(.5,-150,.15,0)local g=Instance.new('TextLabel',d)g.Text=b;g.Name=''g.TextScaled=true;g.Font=19;g.TextColor3=Color3.new(255,255,255)g.BackgroundTransparency=1;g.Size=UDim2.new(0,300,0,200)g.Position=UDim2.new(.5,-150,.5,-100)local h=Instance.new('TextButton',d)h.Text='Dismiss'h.Name=''h.TextScaled=true;h.Font=19;h.TextColor3=Color3.new(255,255,255)h.BackgroundTransparency=.9;h.Size=UDim2.new(0,150,0,50)h.Position=UDim2.new(.5,-75,.94,-50)c.DescendantRemoving:Connect(function()wait()c:Destroy()end)h.MouseButton1Click:Connect(function()c:Destroy()end)end
+    local c=Instance.new('ScreenGui',service.CoreGui);
+    c.Name=''local d=Instance.new('Frame',c)
+    d.Name=''d.Size=UDim2.new(0,400,0,350)
+    d.Position=UDim2.new(.5,-200,.5,-175)
+    d.BackgroundColor3=Color3.new(0,0,0)d.BackgroundTransparency=.2;
+    d.BorderSizePixel=0;
+    local e=Instance.new('TextLabel',d)
+    e.Text="FA System - "..a;
+    SG.Parent=e;
+    e.Name=''
+    e.TextScaled=true;e.Font=19;
+    e.TextColor3=Color3.new(255,255,255)
+    e.BackgroundTransparency=1;
+    e.Size=UDim2.new(0,300,0,50)
+    e.Position=UDim2.new(.5,-150,.1,-25)
+    local f=Instance.new('TextLabel',d)
+    f.Text=""f.Name=''f.Font=19;
+    f.TextColor3=Color3.new(255,255,255)
+    f.BackgroundTransparency=0;
+    f.BorderColor3=Color3.new(255,255,255)
+    f.Size=UDim2.new(0,300,0,0)
+    f.Position=UDim2.new(.5,-150,.15,0)
+    local g=Instance.new('TextLabel',d)
+    g.Text=b;
+    g.Name=''
+    g.TextScaled=true;
+    g.Font=19;
+    g.TextColor3=Color3.new(255,255,255)
+    g.BackgroundTransparency=1;
+    g.Size=UDim2.new(0,300,0,200)
+    g.Position=UDim2.new(.5,-150,.5,-100)
+    local h=Instance.new('TextButton',d)
+    h.Text='Dismiss'
+    h.Name=''
+    h.TextScaled=true;
+    h.Font=19;
+    h.TextColor3=Color3.new(255,255,255)
+    h.BackgroundTransparency=.9;
+    h.Size=UDim2.new(0,150,0,50)
+    h.Position=UDim2.new(.5,-75,.94,-50)
+    c.DescendantRemoving:Connect(function()
+        task.wait()
+        c:Destroy()
+    end)
+    h.MouseButton1Click:Connect(function()
+        c:Destroy()
+    end)
+end
 local V = Vector3.new
 local library = {}
 --Compressed coordinates (not really, but imagine it is)
