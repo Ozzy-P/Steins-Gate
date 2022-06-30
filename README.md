@@ -6,7 +6,7 @@ Open the gate.
 
 ![Steins;Gate](https://github.com/Ozzy-P/Steins-Gate/blob/main/SG.svg?raw=true)
 
-# USE
+# Usage
 Enter sign text into the textbox and spawn. Configure keybinds before startup or re-execute using new binds in settings.
 Click signs to configure orientation and/or manage signs.
 
