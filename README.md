@@ -9,5 +9,4 @@ Enter sign text into the textbox and spawn. Configure keybinds before startup or
 Click signs to configure orientation and/or manage signs.
 
 
-# Sample
 ![Steins;Gate Sample](https://github.com/Ozzy-P/Steins-Gate/blob/main/Sample.png?raw=true)
