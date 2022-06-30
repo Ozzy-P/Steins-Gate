@@ -66,10 +66,7 @@ Update log:
 FA/Ozzy
 --]]
 local GUI = game:GetObjects("rbxassetid://10068824820")[1]
-GUI.Parent = game:GetService("CoreGui")
 
-local TextEntry = GUI.TextObject.Value
-local SpawnButton = GUI.Spawn.Value
 local service = setmetatable({ }, {
 	__index = function(self, key)
 		return game:GetService(key)
@@ -351,8 +348,12 @@ if not _G.GlobalContextMenu then
 	--[S;G]Se Q_Q
 	--[S;G]Ct v4, ba compat w v3
 
+    local Screen = GUI
+    GUI.Parent = game:GetService("CoreGui")
 
-	local buttons = {}
+    local TextEntry = GUI.TextObject.Value
+    local SpawnButton = GUI.Spawn.Value
+	local buttons,Connections = {},{}
 	local MainConnection,ToggleConnection,IB,IC,UIC
 
 
@@ -396,158 +397,6 @@ if not _G.GlobalContextMenu then
 	end
 
 	dragify(GUI.Frame)
-
-
-	TUnderScore.Name = "TitleUnderline"
-	TUnderScore.BackgroundColor3 = Color3.new(1,1,1)
-	TUnderScore.BorderSizePixel = 0
-	TUnderScore.Position = UDim2.new(0.15,0,0.13,0)
-	TUnderScore.Size = UDim2.new(0.7,0,0.005,0)
-
-	SUnderScore.Name = "SelectionUnderline"
-	SUnderScore.BackgroundColor3 = Color3.new(1,1,1)
-	SUnderScore.BorderSizePixel = 0
-	SUnderScore.Position = UDim2.new(0.15,0,0.25,0)
-	SUnderScore.Size = UDim2.new(0.7,0,0.005,0)
-
-	Corner.CornerRadius = UDim.new(0,8)
-	StatusCorner.CornerRadius = UDim.new(0,8)
-	SnapCorner.CornerRadius = UDim.new(0,8)
-
-	KeepSane.Name = "Sanity"
-	KeepSane.AspectRatio = 1
-	KeepSane.DominantAxis = "Height"
-
-	Title.Name = "Lorum"
-	Title.BackgroundTransparency = 1
-	Title.Position = UDim2.new(0,0,0,0)
-	Title.Size = UDim2.new(1,0,0.15,0)
-	Title.Font = "ArialBold"
-	Title.TextColor3 = Color3.new(1,1,1)
-	Title.TextScaled = true
-	Title.Text = "Steins;Gate"
-
-	SignTitle.Name = "SignTitle"
-	SignTitle.BackgroundTransparency = 1
-	SignTitle.Position = UDim2.new(0,0,0.5,0)
-	SignTitle.Size = UDim2.new(0.45,0,0.1,0)
-	SignTitle.Font = "SourceSans"
-	SignTitle.TextColor3 = Color3.new(1,1,1)
-	SignTitle.TextScaled = true
-	SignTitle.Text = "Sign Text:"
-
-	SignText.Name = "SignText"
-	SignText.BackgroundTransparency = 1
-	SignText.Position = UDim2.new(0.425,0,0.5,0)
-	SignText.Size = UDim2.new(0.5,0,0.1,0)
-	SignText.Font = "SourceSans"
-	SignText.TextColor3 = Color3.new(1,1,1)
-	SignText.PlaceholderColor3 = Color3.fromRGB(112,112,112)
-	SignText.TextScaled = true
-	SignText.TextXAlignment = "Left"
-	SignText.Text = "UwU~"
-
-	Snap.Name = "UwU"
-	Snap.BackgroundColor3 = Color3.new(1,1,1)
-	Snap.BorderSizePixel = 0
-	Snap.Position = UDim2.new(0.25,0,0.65,0)
-	Snap.Size = UDim2.new(0.5,0,0.15,0)
-	Snap.Font = "SourceSans"
-	Snap.TextColor3 = Color3.new(0,0,0)
-	Snap.TextScaled = true
-	Snap.Text = "Spawn"
-
-	SnapGradient.Color = ColorSequence.new({
-		ColorSequenceKeypoint.new(0,Color3.fromRGB(233, 167, 255)),
-		ColorSequenceKeypoint.new(1,Color3.fromRGB(131, 137, 255)), 
-	})
-
-	SnapGradient:Clone().Parent = ZDirection
-	SnapGradient:Clone().Parent = YDirection
-	SnapGradient:Clone().Parent = XDirection
-
-
-	StatusGradient.Color = ColorSequence.new({
-		ColorSequenceKeypoint.new(0,Color3.fromRGB(60,60,60)),
-		ColorSequenceKeypoint.new(.3,Color3.fromRGB(60,60,60)),
-		ColorSequenceKeypoint.new(.5,Color3.new(1,1,1)),
-		ColorSequenceKeypoint.new(.7,Color3.fromRGB(60,60,60)),
-		ColorSequenceKeypoint.new(1,Color3.fromRGB(60,60,60)), 
-	})
-	StatusGradient.Rotation = 35
-	StatusGradient.Offset = Vector2.new(0.9,0)
-
-  	ToggleTMode.Name = "Counter"
-   	ToggleTMode.BackgroundTransparency = 1
-   	ToggleTMode.Size = UDim2.new(0.1,0,0.1,0)
-    	ToggleTMode.Position = UDim2.new(0.1,0,0.13,0)
-    	ToggleTMode.Font = "GothamBold"
-    	ToggleTMode.Text = "-"
-    	ToggleTMode.TextSize = 128
-    	ToggleTMode.TextColor3 = Color3.fromRGB(255,169,169)
-    
-    
-	StatusBackground.Name = "StatusBG"
-	StatusBackground.BackgroundColor3 = Color3.new(1,1,1)
-	StatusBackground.BorderSizePixel = 0
-	StatusBackground.Position = UDim2.new(0,0,0.86,0)
-	StatusBackground.Size = UDim2.new(1,0,0.14,0)
-
-	ZButton.Name = "Z"
-	ZButton.BackgroundTransparency = 1
-	ZButton.Size = UDim2.new(0.05,0,0.1,0)
-	ZButton.Position = UDim2.new(0.66,0,0.15,0)
-	ZButton.Font = "GothamBold"
-	ZButton.Text = "Z"
-	ZButton.TextSize = 35
-	ZButton.TextColor3 = Color3.fromRGB(255,169,169)
-
-	YButton.Name = "Y"
-	YButton.BackgroundTransparency = 1
-	YButton.Size = UDim2.new(0.05,0,0.1,0)
-	YButton.Position = UDim2.new(0.46,0,0.15,0)
-	YButton.Font = "GothamBold"
-	YButton.Text = "Y"
-	YButton.TextSize = 35
-	YButton.TextColor3 = Color3.fromRGB(255,169,169)
-
-	XButton.Name = "X"
-	XButton.BackgroundTransparency = 1
-	XButton.Size = UDim2.new(0.1,0,0.1,0)
-	XButton.Position = UDim2.new(0.25,0,0.15,0)
-	XButton.Font = "GothamBold"
-	XButton.Text = "X"
-	XButton.TextSize = 35
-	XButton.TextColor3 = Color3.fromRGB(169,255,169)
-
-
-	ZDirection.Name = "Z_Dir"
-	ZDirection.BackgroundTransparency = 1
-	ZDirection.Size = UDim2.new(0.1,0,0.1,0)
-	ZDirection.Position = UDim2.new(0.65,0,0.3,0)
-	ZDirection.Font = "GothamBold"
-	ZDirection.Text = "0"
-	ZDirection.TextSize = 35
-	ZDirection.TextColor3 = Color3.fromRGB(255,255,255)
-
-	YDirection.Name = "Y_Dir"
-	YDirection.BackgroundTransparency = 1
-	YDirection.Size = UDim2.new(0.1,0,0.1,0)
-	YDirection.Position = UDim2.new(0.45,0,0.3,0)
-	YDirection.Font = "GothamBold"
-	YDirection.Text = "0"
-	YDirection.TextSize = 35
-	YDirection.TextColor3 = Color3.fromRGB(255,255,255)
-
-	XDirection.Name = "X_Dir"
-	XDirection.BackgroundTransparency = 1
-	XDirection.Size = UDim2.new(0.1,0,0.1,0)
-	XDirection.Position = UDim2.new(0.25,0,0.3,0)
-	XDirection.Font = "GothamBold"
-	XDirection.Text = "0"
-	XDirection.TextSize = 35
-	XDirection.TextColor3 = Color3.fromRGB(255,255,255)
-
 
 	local ts = service.TweenService
     local mode = ""
@@ -613,7 +462,7 @@ if not _G.GlobalContextMenu then
 
 
 	-- Store for data wipe (not possible)
-	local UIF = {MainConnection,ToggleConnection,IB,IC,UIC}
+	local UIF = {MainConnection}
 	for i = 1,#UIF do
 		table.insert(Connections,UIF[i])
 	end
