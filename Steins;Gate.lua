@@ -65,7 +65,7 @@ Update log:
 ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝  ╚═════╝░░░░╚═╝░░░╚═════╝░░░░╚═╝░░░╚══════╝╚═╝░░░░░╚═╝
 FA/Ozzy
 --]]
-local GUI = game:GetObjects("rbxassetid://10068824820")[1]
+local GUI = game:GetObjects("rbxassetid://10069041141")[1]
 
 local service = setmetatable({ }, {
 	__index = function(self, key)
@@ -570,9 +570,6 @@ if not _G.GlobalContextMenu then
 		_G.RefreshUI   = string.upper(_G.RefreshUI)
 		if Observable then return end
 		if x.KeyCode == Enum.KeyCode[_G.RefreshUI] then 
-			for _,RbxEvent in pairs(Connections) do
-				RbxEvent:Disconnect()
-			end
 			Connections = nil
 			Main = nil
 			if overWrite then overWrite:Disconnect() end
