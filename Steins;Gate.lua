@@ -54,6 +54,7 @@ _G.Generator = true
 --[[
 Update log: 
     No updates.
+    (PENDING) Add viewport frame to render signs [preview]
 --]]
 
 --[[
